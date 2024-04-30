@@ -2,7 +2,8 @@
 
 This template provides a structured setup for a monorepo project, featuring Next.js 14 for frontend development, PostgreSQL initialization for database management, and OAuth integration for seamless authentication with Google and GitHub. Additionally, it includes essential components such as Shadcn, login, logout, navbar, and footer for building a complete web application.
 
-
+![image](https://github.com/skushagra9/Turbo-Starter-Template/assets/120712705/71730864-4813-4043-8ac7-2e54290eed71)
+![image](https://github.com/skushagra9/Turbo-Starter-Template/assets/120712705/f9f42761-a922-403a-b39c-ca73da03ee25)
 ![image](https://github.com/skushagra9/Turbo-Starter-Tempalate/assets/120712705/4c0756da-88c4-4397-9b56-e77611863770)
 ![image](https://github.com/skushagra9/Turbo-Starter-Tempalate/assets/120712705/6ea0a195-b9df-40c9-8cbe-e39fba3b96dd)
 
@@ -39,12 +40,19 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
+### Clone and Install
+
+```
+git clone https://github.com/skushagra9/Turbo-Starter-Template
+cd Turbo-Starter-Template
+npm install
+```
+
 ### Build
 
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
 npm build
 ```
 
@@ -53,6 +61,8 @@ npm build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
 npm dev
 ```
+### Add env
+
+copy .env.example to .env inside apps/web-app and packages/prisma
