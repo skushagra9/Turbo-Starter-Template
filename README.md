@@ -1,18 +1,28 @@
-# Turborepo starter
+# Monorepo Starter Template
 
-This is an official starter Turborepo.
+This template provides a structured setup for a monorepo project, featuring Next.js 14 for frontend development, PostgreSQL initialization for database management, and OAuth integration for seamless authentication with Google and GitHub. Additionally, it includes essential components such as Shadcn, login, logout, navbar, and footer for building a complete web application.
 
-## Using this example
 
-Run the following command:
+![image](https://github.com/skushagra9/Turbo-Starter-Tempalate/assets/120712705/4c0756da-88c4-4397-9b56-e77611863770)
+![image](https://github.com/skushagra9/Turbo-Starter-Tempalate/assets/120712705/6ea0a195-b9df-40c9-8cbe-e39fba3b96dd)
 
-```sh
-npx create-turbo@latest
-```
+## Next.js 14 Setup
+- Initialize a Next.js project.
+- Configure Next.js 14 features and optimizations.
 
-## What's inside?
+## PostgreSQL Initialization
+- Include scripts for initializing and managing a PostgreSQL database.
+- Add migration and seeding functionality for database setup.
 
-This Turborepo includes the following packages/apps:
+## OAuth Integration
+- Integrate OAuth authentication with Google and GitHub.
+- Utilize Passport.js or similar libraries for OAuth handling.
+
+## Components
+- **Shadcn Component**: Include the Shadcn component with its functionalities.
+- **Login and Logout Components**: Implement authentication components for user management.
+- **Navbar Component**: Create a reusable navigation bar component.
+- **Footer Component**: Implement a footer component to remain at the bottom of the page.
 
 ### Apps and Packages
 
@@ -22,12 +32,9 @@ This Turborepo includes the following packages/apps:
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
 ### Utilities
 
 This Turborepo has some additional tools already setup for you:
-
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
@@ -38,7 +45,7 @@ To build all apps and packages, run the following command:
 
 ```
 cd my-turborepo
-pnpm build
+npm build
 ```
 
 ### Develop
@@ -47,35 +54,5 @@ To develop all apps and packages, run the following command:
 
 ```
 cd my-turborepo
-pnpm dev
+npm dev
 ```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
