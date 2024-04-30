@@ -1,28 +1,102 @@
-## Getting Started
+# Neovim-Essentials: Unleash Your Productivity with Plugins and Keymap ⚡️
 
-First, run the development server:
+Welcome to NeoVim Productivity Unleashed! This repository is dedicated to providing you with a curated list of essential NeoVim plugins and a powerful keymap to boost your productivity.
 
-```bash
-yarn dev
+## Keymaps
+
+Explore our powerful keymap for efficient navigation and editing:
+
+- Command to toggle inline diagnostics
+```
+vim.keymap.set("n", "<space>zx", function()
+  local current_value = vim.diagnostic.config().virtual_text
+  if current_value then
+    vim.diagnostic.config({ virtual_text = false })
+  else
+    vim.diagnostic.config({ virtual_text = true })
+  end
+end, { desc = "toggle inline diagnostics" })
+```
+`
+- Function to check if a floating dialog exists and if not then check for diagnostics under the cursor
+```
+function OpenDiagnosticIfNoFloat()
+  for _, winid in pairs(vim.api.nvim_tabpage_list_wins(0)) do
+    if vim.api.nvim_win_get_config(winid).zindex then
+      return
+    end
+  end
+  -- THIS IS FOR BUILTIN LSP
+  vim.diagnostic.open_float(0, {
+    scope = "cursor",
+    focusable = false,
+    close_events = {
+      "CursorMoved",
+      "CursorMovedI",
+      "BufHidden",
+      "InsertCharPre",
+      "WinLeave",
+    },
+  })
+end
+```
+- Show diagnostics under the cursor when holding position
+```
+vim.api.nvim_create_augroup("lsp_diagnostics_hold", { clear = true })
+vim.api.nvim_create_autocmd({ "CursorHold" }, {
+  pattern = "*",
+  command = "lua OpenDiagnosticIfNoFloat()",
+  group = "lsp_diagnostics_hold",
+})
+
+--focus  on float window with dialog
+vim.keymap.set(
+  "n",
+  "<space>zz",
+  "<cmd> lua vim.diagnostic.open_float()<cr><cmd>lua vim.diagnostic.open_float()<cr>",
+  { silent = true }
+)
 ```
 
-Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
+- Focus on float window with dialog
+```
+vim.keymap.set(
+  "n",
+  "<space>zz",
+  "<cmd> lua vim.diagnostic.open_float()<cr><cmd>lua vim.diagnostic.open_float()<cr>",
+  { silent = true }
+)
+```
+- Focus on float window with dialog and copy contents
+```
+vim.keymap.set(
+  "n",
+  "<space>zy",
+  "<cmd> lua vim.diagnostic.open_float()<cr><cmd>lua vim.diagnostic.open_float()<cr><cmd>lua vim.cmd('normal! ggVGy')<cr>",
+  { silent = true }
+)
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Plugins
 
-To create [API routes](https://nextjs.org/docs/app/building-your-application/routing/router-handlers) add an `api/` directory to the `app/` directory with a `route.ts` file. For individual endpoints, create a subfolder in the `api` directory, like `api/hello/route.ts` would map to [http://localhost:3001/api/hello](http://localhost:3001/api/hello).
+Discover the following essential plugins:
 
-## Learn More
+- Comments Plugin
+  ```
+  {
+    "numToStr/Comment.nvim",
+    opts = {
+      -- add any options here
+    },
+    lazy = false,
+  }
+  ```
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
+We welcome and appreciate contributions from the community! Whether you want to add new plugins, improve existing ones, enhance the keymap, or fix issues, your contributions are valuable.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Credits
+- [Comments Plugin](https://github.com/numToStr/Comment.nvim)
+- [Dialog Focus](https://www.reddit.com/r/neovim/comments/13cmg65/how_to_focus_on_a_diagnostic_message/)
+## License
+This project is licensed under the [MIT License](LICENSE).
