@@ -13,25 +13,27 @@ export function Footer() {
   }
 
   return (
-    <footer className="footer p-4 flex justify-between items-center md:w-2/3  md:fixed md:bottom-0  md:z-10">
-      <span className="flex justify-center md:justify-start tracking-tighter">
-        Made By Kushagra Sharma
-      </span>
-      <div className="flex items-center justify-end mt-4 md:mt-0">
-        <Button
-          size={"icon"}
-          variant={"ghost"}
-          onClick={() => router.push("https://github.com/skushagra9")}
-        >
-          <GitHubLogoIcon />
-        </Button>
-        <Button
-          size={"icon"}
-          variant={"ghost"}
-          onClick={() => router.push("https://twitter.com/skushagrasharma")}
-        >
-          <TwitterLogoIcon />
-        </Button>
+    <footer className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+      <div className="flex flex-row mx-auto w-full md:w-2/3 p-4 justify-between items-center bottom-0">
+        <span className="flex flex-row justify-center md:justify-start tracking-tighter">
+          Made By Kushagra Sharma
+        </span>
+        <div className="flex flex-row items-center md:justify-end">
+          <Button
+            size={"icon"}
+            variant={"ghost"}
+            onClick={() => router.push("https://github.com/skushagra9")}
+          >
+            <GitHubLogoIcon />
+          </Button>
+          <Button
+            size={"icon"}
+            variant={"ghost"}
+            onClick={() => router.push("https://twitter.com/skushagrasharma")}
+          >
+            <TwitterLogoIcon />
+          </Button>
+        </div>
       </div>
     </footer>
   );

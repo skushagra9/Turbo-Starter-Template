@@ -24,7 +24,7 @@ export function Navbar() {
         href={"/"}
         className="flex flex-row justify-center md:justify-start font-semibold tracking-tighter text-lg"
       >
-        ConvoSphere
+        Turbo-Starter-Template
       </Link>
       <div className="flex flex-row items-center md:justify-end">
         <Button

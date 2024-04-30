@@ -21,19 +21,19 @@ export default async function LandingPage() {
           </Badge>
         </a>
         <div className="mt-3 text-center  text-5xl md:text-7xl font-bold tracking-tighter">
-          Conversations made vibrant, connections made effortless.
+          Ignite Your SaaS Journey with a Complete Dynamic Solution
         </div>
 
         <div className="mx-auto mt-5 max-w-screen-md text-center text-lg md:text-xl text-muted-foreground px-4">
-          Connect one-on-one or dive into lively group chats in our intuitive
-          platform.
+          Monorepo Starter Template with Next.js 14, PostgreSQL, OAuth
+          (Google/GitHub), Shadcn, login/logout, navbar, footer components{" "}
         </div>
 
         <div className="mt-8 flex flex-row justify-center gap-x-5">
           <a href={`${session ? "/" : "/login"}`}>
             <Button>Get Started</Button>
           </a>
-          <a href="https://github.com/skushagra9/ConvoSphere">
+          <a href="https://github.com/skushagra9/Turbo-Starter-Tempalate">
             {" "}
             <Button variant={"outline"}>
               <GitHubLogoIcon />
