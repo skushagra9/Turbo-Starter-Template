@@ -13,7 +13,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
+    <footer className="fixed bottom-0 left-0 right-0 bg-white dark:bg-black  z-10">
       <div className="flex flex-row mx-auto w-full md:w-2/3 p-4 justify-between items-center bottom-0">
         <span className="flex flex-row justify-center md:justify-start tracking-tighter">
           Made By Kushagra Sharma

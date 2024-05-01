@@ -8,9 +8,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "ConvoSphere",
+  title: "Saas-Starter",
   description:
-    "ConvoSphere is a cutting-edge chat application where users can engage in one-on-one conversations or participate in lively group chats within intuitive virtual rooms. Our platform fosters seamless communication, vibrant interactions, and effortless connections, enhancing the way people connect and collaborate online. Experience the future of chatting with ConvoSphere!",
+    "Monorepo Starter Template with Next.js 14, PostgreSQL, OAuth (Google/GitHub), Shadcn, login/logout, navbar, footer components",
 };
 
 export const viewport = {
